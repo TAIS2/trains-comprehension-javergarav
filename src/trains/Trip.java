@@ -9,7 +9,7 @@ package trains;
  *
  * @author javergarav
  */
-public class Trains {
+public class Trip {
 
     /**
      * @param args the command line arguments
