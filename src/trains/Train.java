@@ -33,7 +33,7 @@ public class Train {
         this.wagons = wagons;
     }
     
-    public void accommodate(Reservation r){
+    public void accommodate(Reservation r) {
         if (r.getFamily().getMembers().size() <= (wagons.get(0).getChairs() - wagons.get(0).getOccupiedChairs())) {
             ArrayList<Reservation> reservations = new ArrayList<Reservation>();
             if (wagons.get(0).getReservations() == null) {

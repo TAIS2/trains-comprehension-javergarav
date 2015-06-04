@@ -14,7 +14,6 @@ import java.util.List;
 public class Family {
     
     private int id;
-    private Person responsible;
     private List<Person> members;
 
     public int getId() {
@@ -23,14 +22,6 @@ public class Family {
 
     public void setId(int id) {
         this.id = id;
-    }
-
-    public Person getResponsible() {
-        return responsible;
-    }
-
-    public void setResponsible(Person responsible) {
-        this.responsible = responsible;
     }
 
     public List<Person> getMembers() {
