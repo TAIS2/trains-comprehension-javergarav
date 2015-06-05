@@ -39,7 +39,7 @@ public class Train {
             if (wagons.get(0).getReservations() == null) {
                 reservations.add(r);
             } else {
-                for (Reservation res : wagons.get(0).getReservations()) {
+                for (Reservation res : wagons.get(0).getReservations()) { 
                     reservations.add(res);
                 }
                 reservations.add(r);

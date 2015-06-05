@@ -92,6 +92,11 @@ public class Trip {
         reservation.setDate("25-06-2015");
         reservation.setFamily(family1);
         
+        System.out.println(family1.getMembers().get(0).getName()
+                           + " is a member of the family " + family1.getId()
+                           + " with the reservation " + reservation.getId()
+                           + " and date " + reservation.getDate());
+        
     }
     
 }
