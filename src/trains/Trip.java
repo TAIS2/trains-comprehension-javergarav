@@ -1,6 +1,7 @@
 package trains;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 /*
@@ -23,6 +24,7 @@ public class Trip {
         
         // People
         
+        /*
         Person person1 = new Person();
         Person person2 = new Person();
         Person person3 = new Person();
@@ -37,32 +39,30 @@ public class Trip {
         person5.setId(5);
         person6.setId(6);
         
-        /*
         person1.setName("Name1");
         person2.setName("Name2");
         person3.setName("Name3");
         person4.setName("Name4");
         person5.setName("Name5");
         person6.setName("Name6");
-        */
-        
-        person1.getName("Name1");
-        person2.getName("Name2");
-        person3.getName("Name3");
-        person4.getName("Name4");
-        person5.getName("Name5");
-        person6.getName("Name6");
+        */  
         
         // Family
         
-        List<Person> membersFamily1 = new ArrayList<Person>();
+        List<Person> membersFamily1 = new ArrayList<>();
         
-        membersFamily1.add(person1);
-        membersFamily1.add(person2);
-        membersFamily1.add(person3);
-        membersFamily1.add(person4);
-        membersFamily1.add(person5);
-        membersFamily1.add(person6);
+        for (int i = 1; i <= 6; i++) {
+            membersFamily1.add(new Person());
+            membersFamily1.get(i - 1).setId(i);
+            membersFamily1.get(i - 1).setName("Name" + i);
+        }
+        
+        //membersFamily1.add(person1);
+        //membersFamily1.add(person2);
+        //membersFamily1.add(person3);
+        //membersFamily1.add(person4);
+        //membersFamily1.add(person5);
+        //membersFamily1.add(person6);
         
         Family family1 = new Family();     
         family1.setId(1);
@@ -70,14 +70,24 @@ public class Trip {
         
         //Wagons
         
+        List<Wagon> wagons = new ArrayList<>();
+        int w = 1;
+        
+        while (w <= 3) {
+            wagons.add(new Wagon());
+            wagons.get(w - 1).setId(w);
+            wagons.get(w - 1).setChairs(20);
+            wagons.get(w - 1).setOccupiedChairs(0);
+            w++;
+        }
+        
+        /*
         Wagon wagon1 = new Wagon();
         Wagon wagon2 = new Wagon();
         Wagon wagon3 = new Wagon();
         
         wagon1.setId(1);
         wagon1.setChairs(20);
-        wagon1.setOccupiedChairs(0);
-        
         wagon2.setId(2);
         wagon2.setChairs(20);
         wagon2.setOccupiedChairs(0);
@@ -85,10 +95,11 @@ public class Trip {
         wagon3.setId(3);
         wagon3.setChairs(20);
         wagon3.setOccupiedChairs(0);
+        */
         
         // Train
         
-        List<Wagon> wagons = new ArrayList<Wagon>();      
+        //List<Wagon> wagons = new ArrayList<>();      
         Train train = new Train();    
         train.setWagons(wagons);
         
@@ -102,11 +113,10 @@ public class Trip {
         reservation.setFamily(family1);
         
         //System.out.println(family1.getMembers().get(0).getName()
-        System.out.println(family1.getMembers().get(0).setName()
+        System.out.println(family1.getMembers().get(0).getName()
                            + " is a member of the family " + family1.getId()
                            + " with the reservation " + reservation.getId()
                            + " and date " + reservation.getDate());
-        
     }
     
 }
