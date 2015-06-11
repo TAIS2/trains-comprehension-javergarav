@@ -37,12 +37,21 @@ public class Trip {
         person5.setId(5);
         person6.setId(6);
         
+        /*
         person1.setName("Name1");
         person2.setName("Name2");
         person3.setName("Name3");
         person4.setName("Name4");
         person5.setName("Name5");
         person6.setName("Name6");
+        */
+        
+        person1.getName("Name1");
+        person2.getName("Name2");
+        person3.getName("Name3");
+        person4.getName("Name4");
+        person5.getName("Name5");
+        person6.getName("Name6");
         
         // Family
         
@@ -92,7 +101,8 @@ public class Trip {
         reservation.setDate("25-06-2015");
         reservation.setFamily(family1);
         
-        System.out.println(family1.getMembers().get(0).getName()
+        //System.out.println(family1.getMembers().get(0).getName()
+        System.out.println(family1.getMembers().get(0).setName()
                            + " is a member of the family " + family1.getId()
                            + " with the reservation " + reservation.getId()
                            + " and date " + reservation.getDate());

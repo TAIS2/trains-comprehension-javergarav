@@ -35,13 +35,17 @@ public class Train {
     
     public void accommodate(Reservation r) {
         if (r.getFamily().getMembers().size() <= (wagons.get(0).getChairs() - wagons.get(0).getOccupiedChairs())) {
-            ArrayList<Reservation> reservations = new ArrayList<Reservation>();
+            //ArrayList<Reservation> reservations = new ArrayList<Reservation>();
+            ArrayList<Reservation> reservations = new ArrayList<>();
             if (wagons.get(0).getReservations() == null) {
                 reservations.add(r);
             } else {
-                for (Reservation res : wagons.get(0).getReservations()) { 
-                    reservations.add(res);
+                for (int i = 0; i <= wagons.get(0).getReservations().size() - 1; i++) {
+                    reservations.add(wagons.get(0).getReservations().get(i));
                 }
+                //for (Reservation res : wagons.get(0).getReservations()) { 
+                //    reservations.add(res);
+                //}
                 reservations.add(r);
             }
             wagons.get(0).setReservations(reservations);
@@ -53,9 +57,12 @@ public class Train {
                 if (wagons.get(1).getReservations() == null) {
                     reservations.add(r);
                 } else {
-                    for (Reservation res : wagons.get(1).getReservations()) {
+                    //for (int i = 0; i <= wagons.get(1).getReservations().size() - 1; i++) {
+                    //    reservations.add(wagons.get(1).getReservations().get(i));
+                    //}
+                    wagons.get(1).getReservations().stream().forEach((res) -> {
                         reservations.add(res);
-                    }
+                    });
                     reservations.add(r);
                 }
                 wagons.get(1).setReservations(reservations);
@@ -67,9 +74,12 @@ public class Train {
                     if (wagons.get(2).getReservations() == null) {
                         reservations.add(r);
                     } else {
-                        for (Reservation res : wagons.get(2).getReservations()) {
-                            reservations.add(res);
+                        for (int i = 0; i <= wagons.get(2).getReservations().size() - 1; i++) {
+                            reservations.add(wagons.get(2).getReservations().get(i));
                         }
+                        //for (Reservation res : wagons.get(2).getReservations()) {
+                        //    reservations.add(res);
+                        //}
                         reservations.add(r);
                     }
                     wagons.get(2).setReservations(reservations);

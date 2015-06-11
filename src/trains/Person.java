@@ -21,12 +21,14 @@ public class Person {
     public void setId(int id) {
         this.id = id;
     }
-
-    public String getName() {
+    
+    //public String getName() {
+    public String setName() {
         return name;
     }
-
-    public void setName(String name) {
+    
+    //public void setName(String name) {
+    public void getName(String name) {
         this.name = name;
     }
     
